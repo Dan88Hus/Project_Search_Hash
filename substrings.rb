@@ -4,6 +4,9 @@ dictionary = ["below","down","go","going","horn",
 def subs(phrase,dictionary) 
   result = Hash.new("Not Found")
   words = phrase.downcase
+  p "the seaching word is: #{words}"
+  puts "==================="
+  
   dictionary.each do |word|
     match = words.scan(word).length
     result[word] = match unless match<1
@@ -12,6 +15,6 @@ puts result
 end
 subs("below", dictionary)
 puts
-puts "======================"
+puts "====================================="
 puts
 subs("Howdy partner, sit down! How's it going?", dictionary)
